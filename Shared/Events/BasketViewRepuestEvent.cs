@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.Enums
+namespace Shared.Events
 {
-    public enum Category
+    public class BasketViewRepuestEvent
     {
-        Burger=1,Pizza,Pasta
+
     }
 }

@@ -4,6 +4,7 @@ using BasketApi.Models.Contexts;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Shared;
+using Shared.Events;
 
 namespace BasketApi
 {
@@ -20,10 +21,13 @@ namespace BasketApi
             builder.Services.AddMassTransit(configurator =>
             {
                 configurator.AddConsumer<BasketItemAddedEventConsumer>();
+                configurator.AddConsumer<BasketViewRequestEventConsumer>();
                 configurator.UsingRabbitMq((contex, _configure) =>
                 {
                     _configure.Host(builder.Configuration["RabbitMq"]);
                     _configure.ReceiveEndpoint(RabbitMQSettings.Basket_ItemAddedEventQueue, e => e.ConfigureConsumer<BasketItemAddedEventConsumer>(contex));
+
+                    _configure.ReceiveEndpoint(RabbitMQSettings.Basket_ViewRequestEventQueue, e => e.ConfigureConsumer<BasketViewRequestEventConsumer>(contex));
                 });
             });
 
