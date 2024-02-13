@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasketApi", "BasketApi\BasketApi.csproj", "{129A10CA-867B-461F-BF02-64682C9401DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasketApi", "BasketApi\BasketApi.csproj", "{129A10CA-867B-461F-BF02-64682C9401DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{57365016-86E6-481F-8613-70C234FDCE12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{57365016-86E6-481F-8613-70C234FDCE12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi", "OrderApi\OrderApi.csproj", "{CABDA90D-49F6-4D2E-AEF6-31FA78DB64FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{57365016-86E6-481F-8613-70C234FDCE12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57365016-86E6-481F-8613-70C234FDCE12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57365016-86E6-481F-8613-70C234FDCE12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CABDA90D-49F6-4D2E-AEF6-31FA78DB64FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CABDA90D-49F6-4D2E-AEF6-31FA78DB64FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CABDA90D-49F6-4D2E-AEF6-31FA78DB64FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CABDA90D-49F6-4D2E-AEF6-31FA78DB64FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

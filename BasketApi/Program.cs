@@ -22,12 +22,15 @@ namespace BasketApi
             {
                 configurator.AddConsumer<BasketItemAddedEventConsumer>();
                 configurator.AddConsumer<BasketViewRequestEventConsumer>();
+                configurator.AddConsumer<BasketDeleteRequestEventConsumer>();
                 configurator.UsingRabbitMq((contex, _configure) =>
                 {
                     _configure.Host(builder.Configuration["RabbitMq"]);
                     _configure.ReceiveEndpoint(RabbitMQSettings.Basket_ItemAddedEventQueue, e => e.ConfigureConsumer<BasketItemAddedEventConsumer>(contex));
 
                     _configure.ReceiveEndpoint(RabbitMQSettings.Basket_ViewRequestEventQueue, e => e.ConfigureConsumer<BasketViewRequestEventConsumer>(contex));
+
+                    _configure.ReceiveEndpoint(RabbitMQSettings.Basket_DeleteRequestEventQueue, e => e.ConfigureConsumer<BasketDeleteRequestEventConsumer>(contex));
                 });
             });
 
