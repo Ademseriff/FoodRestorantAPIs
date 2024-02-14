@@ -25,21 +25,44 @@ namespace OrderApi.Consumers
             OrderViewResponseEvent orderViewResponseEvent = new OrderViewResponseEvent();
 
 
-           
-               
-                    orderViewResponseEvent.OrderViewResponseEventMessage = orderDetailsDb.Select(o => new OrderViewResponseEventMessage()
+            List<OrderViewResponseEventMessage> messages = new List<OrderViewResponseEventMessage>();
+            List<OrderViewResponseEventMessage> messagess = new List<OrderViewResponseEventMessage>();
+            foreach (var database  in ordersDb)
+            {
+                if (database.State ==0)
+                {
+                    messages = orderDetailsDb.Select(x => new OrderViewResponseEventMessage()
                     {
-                        Category = o.Category,
-                        Email = o.Email,
-                        Product = o.Product,
-                        TotalPrice = o.TotalPrice,
-                        OrderId = o.OrderAddId,
-                        PhoneNumber = o.PhoneNumber,
-                        Adress = o.Adress
+                        Adress  = x.Adress,
+                        Category = x.Category,
+                        Email = x.Email,
+                        OrderId = x.OrderAddId,
+                        PhoneNumber = x.PhoneNumber,
+                        Product = x.Product,
+                        TotalPrice = x.TotalPrice
+                    }).Where(x => x.OrderId == database.Id).ToList();
+                    foreach(var y in messages)
+                    {
+                        messagess.Add(y);
+                    }
+                   
+                }
+            }
+            orderViewResponseEvent.OrderViewResponseEventMessage = messagess;
 
-                    }).ToList();
-               
-           
+            //orderViewResponseEvent.OrderViewResponseEventMessage = orderDetailsDb.Select(o => new OrderViewResponseEventMessage()
+            //   {
+            //        Category = o.Category,
+            //        Email = o.Email,
+            //        Product = o.Product,
+            //        TotalPrice = o.TotalPrice,
+            //        OrderId = o.OrderAddId,
+            //        PhoneNumber = o.PhoneNumber,
+            //        Adress = o.Adress
+
+            //       }).ToList();
+
+
 
 
             await publishEndpoint.Publish(orderViewResponseEvent);
