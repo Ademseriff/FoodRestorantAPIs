@@ -17,5 +17,9 @@ namespace Shared
         public const string Basket_DeleteRequestEventQueue = "Basket-delete-request-event-queue";
 
         public const string Order_AddRequestEventQueue = "order-add-request-event-queue";
+
+        public const string Order_ViewRequestEventQueue = "order-view-request-event-queue";
+
+        public const string Admin_ViewResponseEventQueue = "order-view-response-event-queue";
     }
 }

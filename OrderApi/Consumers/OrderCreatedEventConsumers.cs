@@ -31,6 +31,8 @@ namespace OrderApi.Consumers
                     Category = contex.Category,
                     Product = contex.Product,
                     Email = contex.Email,
+                    Adress = contex.Adress,
+                    PhoneNumber = contex.PhoneNumber
                     
                 }).ToList();
                 await database.AddAsync(orderAdd);

@@ -34,6 +34,8 @@ namespace OrderApi.Migrations
                     Category = table.Column<int>(type: "int", nullable: false),
                     Product = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Adress = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     OrderAddId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

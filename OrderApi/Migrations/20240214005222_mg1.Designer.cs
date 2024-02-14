@@ -11,7 +11,7 @@ using OrderApi.Models.Contexts;
 namespace OrderApi.Migrations
 {
     [DbContext(typeof(OrderApiDbContext))]
-    [Migration("20240212234357_mg1")]
+    [Migration("20240214005222_mg1")]
     partial class mg1
     {
         /// <inheritdoc />
@@ -51,6 +51,10 @@ namespace OrderApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Adress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Category")
                         .HasColumnType("int");
 
@@ -60,6 +64,10 @@ namespace OrderApi.Migrations
 
                     b.Property<int>("OrderAddId")
                         .HasColumnType("int");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Product")
                         .IsRequired()

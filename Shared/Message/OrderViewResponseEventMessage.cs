@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Shared.Message
 {
-    public class OrderCreatedEventMessage
+    public class OrderViewResponseEventMessage
     {
         public string TotalPrice { get; set; }
 
@@ -15,12 +15,11 @@ namespace Shared.Message
 
         public string Product { get; set; }
 
+        public string Email { get; set; }
         public string Adress { get; set; }
 
         public string PhoneNumber { get; set; }
 
-
-        public string Email { get; set; }
-
+        public int OrderId { get; set; }
     }
 }

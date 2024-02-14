@@ -42,7 +42,7 @@ namespace BasketApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("basketAdds");
+                    b.ToTable("basketAdds", (string)null);
                 });
 #pragma warning restore 612, 618
         }
