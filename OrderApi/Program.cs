@@ -12,8 +12,8 @@ namespace OrderApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            //OrderViewRequestEventConsumers
 
+            //OrderViewCompLatedEventConsumers
             builder.Services.AddDbContext<OrderApiDbContext>(opt => opt.UseSqlServer(
                builder.Configuration.GetConnectionString("MSSQLSERVER")));
 
@@ -21,6 +21,9 @@ namespace OrderApi
             {
                 configurator.AddConsumer<OrderCreatedEventConsumers>();
                 configurator.AddConsumer<OrderViewRequestEventConsumers>();
+                configurator.AddConsumer<OrderComplatedEventConsumers>();
+                configurator.AddConsumer<OrderFailedEventConsumers>();
+                configurator.AddConsumer<OrderViewCompLatedEventConsumers>();
                 configurator.UsingRabbitMq((contex, _configure) =>
                 {
                     _configure.Host(builder.Configuration["RabbitMq"]);
@@ -28,6 +31,11 @@ namespace OrderApi
                     _configure.ReceiveEndpoint(RabbitMQSettings.Order_AddRequestEventQueue, e => e.ConfigureConsumer<OrderCreatedEventConsumers>(contex));
 
                     _configure.ReceiveEndpoint(RabbitMQSettings.Order_ViewRequestEventQueue, e => e.ConfigureConsumer<OrderViewRequestEventConsumers>(contex));
+
+                    _configure.ReceiveEndpoint(RabbitMQSettings.Order_OrderComplatedEventQueue, e => e.ConfigureConsumer<OrderComplatedEventConsumers>(contex));
+                    _configure.ReceiveEndpoint(RabbitMQSettings.Order_OrderFailedEventQueue, e => e.ConfigureConsumer<OrderFailedEventConsumers>(contex));
+
+                    _configure.ReceiveEndpoint(RabbitMQSettings.Order_OrderViewComplatedEventQueue, e => e.ConfigureConsumer<OrderViewCompLatedEventConsumers>(contex));
                 });
             });
 

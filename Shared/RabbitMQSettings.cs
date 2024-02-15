@@ -21,5 +21,13 @@ namespace Shared
         public const string Order_ViewRequestEventQueue = "order-view-request-event-queue";
 
         public const string Admin_ViewResponseEventQueue = "order-view-response-event-queue";
+
+        public const string Order_OrderComplatedEventQueue = "order-complated-event-queue";
+
+        public const string Order_OrderFailedEventQueue = "order-failed-event-queue";
+
+        public const string Order_OrderViewComplatedEventQueue = "order-complatedview-event-queue";
+
+        public const string Admin_OrderViewComplatedResponseEventQueue = "order-complatedview-response-event-queue";
     }
 }
