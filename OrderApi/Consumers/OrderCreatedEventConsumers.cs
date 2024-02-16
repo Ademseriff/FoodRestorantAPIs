@@ -4,6 +4,7 @@ using OrderApi.Models.Contexts;
 using Shared.Enums;
 using Shared.Events;
 using System.ComponentModel.DataAnnotations.Schema;
+using State = Shared.Enums.State;
 
 namespace OrderApi.Consumers
 {
@@ -38,6 +39,8 @@ namespace OrderApi.Consumers
                 await database.AddAsync(orderAdd);
                await database.SaveChangesAsync();
 
+             
+             
             }
             catch (Exception ex)
             {

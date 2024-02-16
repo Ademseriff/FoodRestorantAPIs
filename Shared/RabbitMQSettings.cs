@@ -29,5 +29,7 @@ namespace Shared
         public const string Order_OrderViewComplatedEventQueue = "order-complatedview-event-queue";
 
         public const string Admin_OrderViewComplatedResponseEventQueue = "order-complatedview-response-event-queue";
+
+        public const string Mail_SentEventQueue = "mail-sent-event-queue";
     }
 }
