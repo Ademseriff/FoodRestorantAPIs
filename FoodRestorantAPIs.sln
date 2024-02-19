@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApi", "OrderApi\OrderApi.csproj", "{CABDA90D-49F6-4D2E-AEF6-31FA78DB64FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailApi", "MailApi\MailApi.csproj", "{E1FB2169-2C11-4EC1-AB3B-8B13E6CE0306}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailApi", "MailApi\MailApi.csproj", "{E1FB2169-2C11-4EC1-AB3B-8B13E6CE0306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderBackupApi", "OrderBackupApi\OrderBackupApi.csproj", "{77E52027-39D3-498B-8235-D79808CFF853}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E1FB2169-2C11-4EC1-AB3B-8B13E6CE0306}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1FB2169-2C11-4EC1-AB3B-8B13E6CE0306}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1FB2169-2C11-4EC1-AB3B-8B13E6CE0306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E52027-39D3-498B-8235-D79808CFF853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E52027-39D3-498B-8235-D79808CFF853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E52027-39D3-498B-8235-D79808CFF853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E52027-39D3-498B-8235-D79808CFF853}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
